@@ -415,6 +415,10 @@ clonalframeml:
   - modules/clonalframeml/**
   - tests/modules/clonalframeml/**
 
+clustalo/clustalo:
+  - modules/clustalo/clustalo/**
+  - tests/modules/clustalo/clustalo/**
+
 cmseq/polymut:
   - modules/cmseq/polymut/**
   - tests/modules/cmseq/polymut/**
