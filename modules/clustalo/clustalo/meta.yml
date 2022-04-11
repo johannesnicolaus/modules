@@ -1,51 +1,42 @@
 name: "clustalo_clustalo"
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description: "Clustal Omega multiple sequence alignment program"
 keywords:
-  - sort
+  - multiple sequence alignment
+  - msa
 tools:
   - "clustalo":
-      ## TODO nf-core: Add a description and other details for the software below
       description: "Latest version of Clustal: a multiple sequence alignment program for DNA or proteins"
-      homepage: "None"
-      documentation: "None"
+      homepage: "http://www.clustal.org/omega/"
+      documentation: "http://www.clustal.org/omega/README"
       tool_dev_url: "None"
-      doi: ""
+      doi: "10.1038/msb.2011.75"
       licence: "['GPL v2']"
 
-## TODO nf-core: Add a description of all of the variables used as input
 input:
-  # Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
-        e.g. [ id:'test', single_end:false ]
-  # 
-  ## TODO nf-core: Delete / customise this example input
-  - bam:
+        e.g. [ id:'test' ]
+  - fasta:
       type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: fasta file (can be compressed with gz)
+      pattern: "*.{fasta,fasta.gz,fa,fa.gz,fna,fna.gz,faa,faa.gz}"
 
-## TODO nf-core: Add a description of all of the variables used as output
 output:
-  #Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
-        e.g. [ id:'test', single_end:false ]
-  # 
+        e.g. [ id:'test' ]
   - versions:
       type: file
       description: File containing software versions
       pattern: "versions.yml"
-  ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - fasta:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Compressed multiple aligned fasta file
+      pattern: "*.{mfa.gz}"
 
 authors:
   - "@johannesnicolaus"
