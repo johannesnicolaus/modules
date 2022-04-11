@@ -1,14 +1,10 @@
-## TODO nf-core: Please run the following command to build this file:
-#                nf-core modules create-test-yml clustalo/clustalo
-- name: "clustalo clustalo"
-  command: nextflow run ./tests/modules/clustalo/clustalo -entry test_clustalo_clustalo -c ./tests/config/nextflow.config -c ./tests/modules/clustalo/clustalo/nextflow.config
+- name: clustalo clustalo test_clustalo_clustalo
+  command: nextflow run tests/modules/clustalo/clustalo -entry test_clustalo_clustalo -c tests/config/nextflow.config
   tags:
-    - "clustalo"
-    #
-    - "clustalo/clustalo"
-    #
+    - clustalo/clustalo
+    - clustalo
   files:
-    - path: "output/clustalo/test.bam"
-      md5sum: e667c7caad0bc4b7ac383fd023c654fc
+    - path: output/clustalo/test.mfa
+      md5sum: 5633199a02632045da7c3bb08bc3c574
     - path: output/clustalo/versions.yml
-      md5sum: a01fe51bc4c6a3a6226fbf77b2c7cf3b
+      md5sum: 71a9f99022019b91e5bbe01e8b00c2b2
