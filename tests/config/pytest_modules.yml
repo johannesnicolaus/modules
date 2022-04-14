@@ -1315,6 +1315,10 @@ phantompeakqualtools:
   - modules/phantompeakqualtools/**
   - tests/modules/phantompeakqualtools/**
 
+phast/phylop:
+  - modules/phast/phylop/**
+  - tests/modules/phast/phylop/**
+
 phyloflash:
   - modules/phyloflash/**
   - tests/modules/phyloflash/**
