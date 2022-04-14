@@ -1,9 +1,11 @@
 - name: clustalo clustalo test_clustalo_clustalo
   command: nextflow run tests/modules/clustalo/clustalo -entry test_clustalo_clustalo -c tests/config/nextflow.config
   tags:
-    - clustalo
     - clustalo/clustalo
+    - clustalo
   files:
+    - path: output/clustalo/test.dnd
+      md5sum: fb1b1341eccff3effc6c0ab57ee2e098
     - path: output/clustalo/test.mfa.gz
       md5sum: d48befd167446de02c6328e63a824582
     - path: output/clustalo/versions.yml
