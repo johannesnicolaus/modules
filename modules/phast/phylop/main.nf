@@ -26,8 +26,10 @@ process PHAST_PHYLOP {
     gzip -c -d $fasta > ${prefix}.fasta
     
     phylop \\
-        ${prefix}.fasta \\
+        --wig-scores \\
+        --method LRT \\
         $mod \\
+        ${prefix}.fasta \\
         > ${prefix}.wig
 
     cat <<-END_VERSIONS > versions.yml
