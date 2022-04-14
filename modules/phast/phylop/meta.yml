@@ -1,51 +1,45 @@
 name: "phast_phylop"
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description: Compute conservation or acceleration p-values based on an alignment
 keywords:
-  - sort
+  - phylogenetic analysis
 tools:
   - "phast":
-      ## TODO nf-core: Add a description and other details for the software below
       description: "PHAST is a freely available software package for comparative and evolutionary genomics."
-      homepage: "None"
-      documentation: "None"
+      homepage: "http://compgen.cshl.edu/phast/"
+      documentation: "http://compgen.cshl.edu/phast/help-pages/"
       tool_dev_url: "None"
       doi: ""
       licence: "['BSD']"
 
-## TODO nf-core: Add a description of all of the variables used as input
 input:
-  # Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  # 
-  ## TODO nf-core: Delete / customise this example input
-  - bam:
+  - fasta:
       type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: fasta file
+      pattern: "*.{fasta,fasta.gz,fa,fa.gz,fna,fna.gz,faa,faa.gz}"
+  - mod:
+      type: file
+      description: phylogenetic model file
+      pattern: "*.{mod}"
 
-## TODO nf-core: Add a description of all of the variables used as output
 output:
-  #Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  # 
   - versions:
       type: file
       description: File containing software versions
       pattern: "versions.yml"
-  ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - wig:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Conservation scores (-log10 p-values) for each site in an alignment  in the fixed-step wig format 
+      pattern: "*.{wig}"
 
 authors:
   - "@johannesnicolaus"
