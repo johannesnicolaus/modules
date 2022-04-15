@@ -37,6 +37,9 @@ output:
       type: file
       description: Compressed multiple aligned fasta file
       pattern: "*.{mfa.gz}"
-
+  - dnd:
+      type: file
+      description: Guide tree file
+      pattern: "*.{dnd}"
 authors:
   - "@johannesnicolaus"
