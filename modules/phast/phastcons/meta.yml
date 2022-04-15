@@ -1,5 +1,4 @@
 name: "phast_phastcons"
-## TODO nf-core: Add a description of the module and list keywords
 description: Identify conserved elements or produce conservation scores
 keywords:
   - sequence conservation
