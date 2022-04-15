@@ -1,6 +1,6 @@
 process PHAST_PHYLOP {
     tag "$meta.id"
-    label 'process_medium'
+    label 'process_small'
 
     conda (params.enable_conda ? "bioconda::phast=1.5" : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -26,6 +26,7 @@ process PHAST_PHYLOP {
     gzip -c -d $fasta > ${prefix}.fasta
     
     phylop \\
+        $args \\
         --wig-scores \\
         --method LRT \\
         $mod \\
