@@ -1,51 +1,47 @@
 name: "phast_phylofit"
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description: Fits one or more tree models to a multiple alignment of DNA
+    sequences by maximum likelihood, using the specified tree topology
+    and substitution model
 keywords:
-  - sort
+  - phylogenetic model
 tools:
   - "phast":
-      ## TODO nf-core: Add a description and other details for the software below
       description: "PHAST is a freely available software package for comparative and evolutionary genomics."
-      homepage: "None"
-      documentation: "None"
+      homepage: "http://compgen.cshl.edu/phast/"
+      documentation: "http://compgen.cshl.edu/phast/help-pages/"
       tool_dev_url: "None"
       doi: ""
       licence: "['BSD']"
 
-## TODO nf-core: Add a description of all of the variables used as input
 input:
-  # Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  # 
-  ## TODO nf-core: Delete / customise this example input
-  - bam:
+  - fasta:
       type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Multiple aligned fasta file
+      pattern: "*.{fasta,fasta.gz,fa,fa.gz,fna,fna.gz,faa,faa.gz}"
+  - tree:
+      type: file
+      description: Guide tree file
+      pattern: "*.{dnd}"
 
-## TODO nf-core: Add a description of all of the variables used as output
 output:
-  #Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  # 
   - versions:
       type: file
       description: File containing software versions
       pattern: "versions.yml"
-  ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - mod:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Phylogenetic tree model
+      pattern: "*.{mod}"
 
 authors:
   - "@johannesnicolaus"
