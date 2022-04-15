@@ -1,6 +1,6 @@
 process PHAST_PHYLOP {
     tag "$meta.id"
-    label 'process_small'
+    label 'process_low'
 
     conda (params.enable_conda ? "bioconda::phast=1.5" : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
