@@ -19,7 +19,7 @@ input:
         e.g. [ id:'test', single_end:false ]
   - fasta:
       type: file
-      description: fasta file
+      description: multiple aligned fasta file
       pattern: "*.{fasta,fasta.gz,fa,fa.gz,fna,fna.gz,faa,faa.gz}"
   - mod:
       type: file
