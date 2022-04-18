@@ -8,8 +8,7 @@ process PHAST_PHASTCONS {
         'quay.io/biocontainers/phast:1.5--h779adbc_3' }"
 
     input:
-    tuple val(meta), path(fasta)
-    tuple val(meta), path(mod)
+    tuple val(meta), path(fasta), path(mod)
 
     output:
     tuple val(meta), path("*.wig"), emit: wig

@@ -1,14 +1,10 @@
-## TODO nf-core: Please run the following command to build this file:
-#                nf-core modules create-test-yml phast/phastcons
-- name: "phast phastcons"
-  command: nextflow run ./tests/modules/phast/phastcons -entry test_phast_phastcons -c ./tests/config/nextflow.config -c ./tests/modules/phast/phastcons/nextflow.config
+- name: phast phastcons test_phast_phastcons
+  command: nextflow run tests/modules/phast/phastcons -entry test_phast_phastcons -c tests/config/nextflow.config
   tags:
-    - "phast"
-    #
-    - "phast/phastcons"
-    #
+    - phast
+    - phast/phastcons
   files:
-    - path: "output/phast/test.bam"
-      md5sum: e667c7caad0bc4b7ac383fd023c654fc
+    - path: output/phast/test.wig
+      md5sum: c16f1364e755483ac23d0dc547a57f59
     - path: output/phast/versions.yml
-      md5sum: a01fe51bc4c6a3a6226fbf77b2c7cf3b
+      md5sum: 6cd2e72fa5b4049e8472c13b7a8b8365
