@@ -20,7 +20,7 @@ input:
   - fasta:
       type: file
       description: multiple aligned fasta file
-      pattern: "*.{fasta,fasta.gz,fa,fa.gz,fna,fna.gz,faa,faa.gz}"
+      pattern: "*.{mfa,mfa.gz,fasta,fasta.gz,fa,fa.gz,fna,fna.gz,faa,faa.gz}"
   - mod:
       type: file
       description: phylogenetic model file
