@@ -1,0 +1,10 @@
+- name: phast phylofit test_phast_phylofit
+  command: nextflow run tests/modules/phast/phylofit -entry test_phast_phylofit -c tests/config/nextflow.config
+  tags:
+    - phast
+    - phast/phylofit
+  files:
+    - path: output/phast/test.mod
+      md5sum: 814cffdc21e13b3a9fd0c8c5fa95a04f
+    - path: output/phast/versions.yml
+      md5sum: 8c8310e51cdd3a9243fa89e3e2852933
