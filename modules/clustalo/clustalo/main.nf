@@ -11,8 +11,8 @@ process CLUSTALO_CLUSTALO {
 
     output:
     tuple val(meta), path("*.mfa.gz"), emit: fasta
-    tuple val(meta), path("*.dnd"), emit: dnd
-    path "versions.yml"                      , emit: versions
+    tuple val(meta), path("*.tree"), optional: true, emit: tree
+    path "versions.yml"              , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -26,7 +26,7 @@ process CLUSTALO_CLUSTALO {
         $args \\
         --threads=$task.cpus \\
         --auto \\
-        --guidetree-out ${prefix}.dnd \\
+        --guidetree-out ${prefix}.tree \\
         --in $fasta \\
         | gzip --no-name > ${prefix}.mfa.gz
 

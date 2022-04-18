@@ -37,9 +37,9 @@ output:
       type: file
       description: Compressed multiple aligned fasta file
       pattern: "*.{mfa.gz}"
-  - dnd:
+  - tree:
       type: file
-      description: Guide tree file
-      pattern: "*.{dnd}"
+      description: Guide tree in Newick format produced from a multiple sequence alignment
+      pattern: "*.{tree}"
 authors:
   - "@johannesnicolaus"
