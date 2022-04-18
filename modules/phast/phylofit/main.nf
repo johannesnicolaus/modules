@@ -8,8 +8,7 @@ process PHAST_PHYLOFIT {
         'quay.io/biocontainers/phast:1.5--h779adbc_3' }"
 
     input:
-    tuple val(meta), path(fasta)
-    tuple val(meta), path(tree)
+    tuple val(meta), path(fasta), path(tree)
 
     output:
     tuple val(meta), path("*.mod"), emit: mod
@@ -28,10 +27,8 @@ process PHAST_PHYLOFIT {
     phyloFit \\
         $args \\
         --tree $tree \\
-        --seed 1 \\
+        --out-root ${prefix} \\
         ${prefix}.fasta
-
-    mv phyloFit.mod ${prefix}.mod
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
