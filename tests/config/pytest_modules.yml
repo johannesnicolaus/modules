@@ -479,6 +479,10 @@ custom/getchromsizes:
   - modules/custom/getchromsizes/**
   - tests/modules/custom/getchromsizes/**
 
+custom/preprocessingr:
+  - modules/custom/preprocessingr/**
+  - tests/modules/custom/preprocessingr/**
+
 cutadapt:
   - modules/cutadapt/**
   - tests/modules/cutadapt/**
@@ -1410,6 +1414,10 @@ pmdtools/filter:
 porechop:
   - modules/porechop/**
   - tests/modules/porechop/**
+
+preprocessingr:
+  - modules/preprocessingr/**
+  - tests/modules/preprocessingr/**
 
 preseq/ccurve:
   - modules/preseq/ccurve/**
