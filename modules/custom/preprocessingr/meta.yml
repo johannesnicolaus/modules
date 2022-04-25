@@ -1,0 +1,45 @@
+name: "custom_preprocessingr"
+description: Preprocessing of GTF files to produce promoters fasta and GTF files
+keywords:
+  - promoter analysis
+tools:
+  - "custom":
+      description: "Custom R scripts"
+      homepage: ""
+      documentation: ""
+      tool_dev_url: ""
+      doi: ""
+      licence: ""
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - gtf:
+      type: file
+      description: GTF file
+      pattern: "*.{gtf}"
+
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  - fasta:
+      type: file
+      description: fasta file containing promoters
+      pattern: "*.{fa}"
+  - gff3:
+    type: file
+    description: gff3 file of promoters
+    pattern: "*.{gff3}"
+
+authors:
+  - "@johannesnicolaus"
