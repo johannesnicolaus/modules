@@ -11,11 +11,10 @@ process CUSTOM_SEPARATEORTHOLOGSR {
         'jnicolaus/luscombeu_oikfunction_r:latest' }"
 
     input:
-    tuple val(meta), path(gff)
+    tuple val(meta), path(gff3), path(database)
 
     output:
-    tuple val(meta), path("*.gff3"), emit: gff3
-    tuple val(meta), path("*.fasta"), emit: fasta
+    tuple val(meta), path("*/*.fasta"), emit: fasta
     path "versions.yml"           , emit: versions
 
     when:
@@ -25,10 +24,13 @@ process CUSTOM_SEPARATEORTHOLOGSR {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
+    mkdir ${prefix}
+
     separate_orthologs.R \\
         $args \\
-        --gff ${prefix}.gff \\
-        --genome_id ${prefix}
+        --databasepath $database \\
+        --gffdir $gff3 \\
+        --outdir ${prefix}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

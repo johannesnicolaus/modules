@@ -1,5 +1,5 @@
-name: "custom_preprocessingr"
-description: Preprocessing of GTF files to produce promoters fasta and GTF files
+name: "custom_separateorthologsr"
+description: Separate orthologs to one fasta file per ortholog groups
 keywords:
   - promoter analysis
 tools:
@@ -17,10 +17,14 @@ input:
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  - gtf:
+  - tsv:
       type: file
-      description: GTF file
-      pattern: "*.{gtf}"
+      description: TSV file containing ortholog groups
+      pattern: "*.{tsv}"
+  - gff3dir:
+      type: directory
+      description: Directory containing gff3 files
+      pattern: "*/"
 
 output:
   - meta:

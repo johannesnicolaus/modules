@@ -1,12 +1,16 @@
-- name: custom preprocessingr test_custom_preprocessingr
-  command: nextflow run tests/modules/custom/preprocessingr -entry test_custom_preprocessingr -c tests/config/nextflow.config
+- name: custom separateorthologsr test_custom_separateorthologsr
+  command: nextflow run tests/modules/custom/separateorthologsr -entry test_custom_separateorthologsr -c tests/config/nextflow.config
   tags:
-    - custom/preprocessingr
     - custom
+    - custom/separateorthologsr
   files:
-    - path: output/custom/OKI2018.I69.fasta
-      md5sum: 2a7772da76258177bf9608aa62554b6e
-    - path: output/custom/OKI2018.I69.gff3
-      md5sum: dfb0ea6374c628955093ce8f7163f2ca
+    - path: output/custom/test/1.fasta
+      md5sum: 0bf7d6f2075a8f823804200eb9aba5b9
+    - path: output/custom/test/2.fasta
+      md5sum: 06a0bee91aba981c0f0c2ec066b7bf9d
+    - path: output/custom/test/3.fasta
+      md5sum: 95db54e310badd2bdbbf80ecc3875cd1
+    - path: output/custom/test/4.fasta
+      md5sum: ab3b7651a4dca9ebe6c34e2592385c4e
     - path: output/custom/versions.yml
-      md5sum: d73ccb62c86e1179cbf6460628f575f7
+      md5sum: cca3c756a1dee6cca1ab2748b5abc453
