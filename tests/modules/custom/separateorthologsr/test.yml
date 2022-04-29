@@ -1,8 +1,8 @@
 - name: custom separateorthologsr test_custom_separateorthologsr
   command: nextflow run tests/modules/custom/separateorthologsr -entry test_custom_separateorthologsr -c tests/config/nextflow.config
   tags:
-    - custom
     - custom/separateorthologsr
+    - custom
   files:
     - path: output/custom/test/1.fasta
       md5sum: 0bf7d6f2075a8f823804200eb9aba5b9

@@ -11,7 +11,8 @@ process CUSTOM_SEPARATEORTHOLOGSR {
         'jnicolaus/luscombeu_oikfunction_r:latest' }"
 
     input:
-    tuple val(meta), path(gff3), path(database)
+    tuple val(meta), path(database), path(gff3, stageAs: "input*/*")
+
 
     output:
     tuple val(meta), path("*/*.fasta"), emit: fasta
@@ -23,13 +24,15 @@ process CUSTOM_SEPARATEORTHOLOGSR {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
+    def gff3List = gff3.collect{ it.toString() }
+    
     """
     mkdir ${prefix}
 
     separate_orthologs.R \\
         $args \\
         --databasepath $database \\
-        --gffdir $gff3 \\
+        --gff ${gff3List.join(',')} \\
         --outdir ${prefix}
 
     cat <<-END_VERSIONS > versions.yml
